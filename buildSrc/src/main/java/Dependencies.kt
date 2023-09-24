@@ -25,7 +25,7 @@ object Version {
 
     const val viewModelDeligate = "1.6.0"
 
-    const val dagger = "2.44"
+    const val dagger = "2.48"
     const val hiltCompiler = "1.0.0"
     const val hiltComposeNavigation = "1.0.0"
 
@@ -172,7 +172,6 @@ object LottieAnimations {
 }
 
 // compose
-
 object JetpackCompose {
     const val composeActivity = "androidx.activity:activity-compose:${Version.composeActivity}"
 

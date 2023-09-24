@@ -1,6 +1,8 @@
 plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
+    id("com.google.dagger.hilt.android")
+    kotlin("kapt")
 }
 
 android {
@@ -34,10 +36,33 @@ android {
 
 dependencies {
 
-    implementation("androidx.core:core-ktx:1.9.0")
-    implementation("androidx.appcompat:appcompat:1.6.1")
-    implementation("com.google.android.material:material:1.8.0")
-    testImplementation("junit:junit:4.13.2")
-    androidTestImplementation("androidx.test.ext:junit:1.1.5")
-    androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
+    implementation(Deps.core)
+    implementation(Deps.appCompat)
+    implementation(CoroutinesLifecycleScope.lifeCycleRuntime)
+    implementation(JetpackCompose.composeActivity)
+    implementation(JetpackCompose.composeUi)
+//    implementation(JetpackCompose.composeGraphics)
+//    implementation(JetpackCompose.composeUiToolingPreview)
+    implementation(JetpackCompose.composeMaterial)
+    implementation(JetpackCompose.composeMaterial3)
+    testImplementation(TestImplementation.junit)
+    androidTestImplementation(AndroidTestImplementation.junit)
+    androidTestImplementation(AndroidTestImplementation.espresso)
+
+//    implementation(platform(JetpackCompose.platformComposeBom))
+//    androidTestImplementation(platform(JetpackCompose.platformComposeBom))
+//    androidTestImplementation(ComposeAndroidTestImplementation.composeUiTest)
+//    debugImplementation(ComposeDebugImplementation.toolingUi)
+//    debugImplementation(ComposeDebugImplementation.manifestTest)
+    implementation(Retrofit.retrofit)
+    implementation(Retrofit.okHttp)
+    implementation(Retrofit.gsonConvertor)
+
+    implementation(DaggerHilt.hilt)
+    kapt(DaggerHilt.hiltCompiler)
+//    ksp("androidx.room:room-compiler:2.5.0")
+
+
 }
+
+
